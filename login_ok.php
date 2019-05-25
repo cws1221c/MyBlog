@@ -1,16 +1,17 @@
 <?php
 
 $id = $_POST['id'];
-$pw = $_POST['password'];
+$pwd = $_POST['pwd'];
 
 require("db.php");
 
-$sql = "SELECT * FROM users WHERE id = ? AND password = PASSWORD(?)";
-$user = fetch($con, $sql, [$id, $pw]);
+$sql = "SELECT * FROM board_user WHERE id = ? AND pwd = ?";
+$user = fetch($con, $sql, [$id, $pwd]);
 
 if ($user) {
     $_SESSION['user'] = $user;
-    msgAndGo("로그인 성공", "/index.php");
+    $_SESSION['name'] = $user->name;
+    msgAndGo("로그인 성공", "/getboardlist.php");
 } else {
-    msgAndGo("로그인 실패", "/login.php");
+    msgAndGo("로그인 실패", "/index.php");
 }

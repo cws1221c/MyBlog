@@ -1,5 +1,6 @@
 <?php
 require("db.php");
-
 unset($_SESSION['user']);
-msgAndGo("로그아웃 되었습니다.", "/index.php");
+unset($_SESSION['name']);
+    
+msgAndGo("로그아웃 성공", "/index.php");

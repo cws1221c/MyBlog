@@ -1,17 +1,16 @@
 <?php
 $id = $_POST['id'];
 $name = $_POST['name'];
-$pw = $_POST['password'];
+$pwd = $_POST['pwd'];
 
 require("db.php");
 
-$sql = "INSERT INTO users (id, name, password, money)
-        VALUES (?, ?, PASSWORD(?), 0)";
+$sql = "INSERT INTO board_user (id, name, pwd) VALUES (?, ?, ?)";
 
-$cnt = query($con, $sql, [$id, $name, $pw]);
+$cnt = query($con, $sql, [$id, $name, $pwd]);
 
 if ($cnt == 0) {
-    echo "회원가입이 실패했습니다.";
+    msgAndGo("회원가입 실패", "/register.php");
 } else {
-    msgAndGo("회원가입이 성공했습니다.", "/index.php");
+    msgAndGo("회원가입 성공", "/index.php");
 }
