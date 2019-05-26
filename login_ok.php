@@ -5,7 +5,7 @@ $pwd = $_POST['pwd'];
 
 require("db.php");
 
-$sql = "SELECT * FROM board_user WHERE id = ? AND pwd = ?";
+$sql = "SELECT * FROM board_user WHERE id = ? AND pwd = PASSWORD(?)";
 $user = fetch($con, $sql, [$id, $pwd]);
 
 if ($user) {

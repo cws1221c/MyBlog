@@ -5,7 +5,7 @@ $pwd = $_POST['pwd'];
 
 require("db.php");
 
-$sql = "INSERT INTO board_user (id, name, pwd) VALUES (?, ?, ?)";
+$sql = "INSERT INTO board_user (id, name, pwd) VALUES (?, ?, PASSWORD(?))";
 
 $cnt = query($con, $sql, [$id, $name, $pwd]);
 

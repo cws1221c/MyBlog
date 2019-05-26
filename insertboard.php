@@ -7,37 +7,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <title>글작성</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <style>
-        form {
-            position: relative;
-        }
-        button {
-            position: absolute;
-            bottom:150px;
-        }
-    </style>
 </head>
 
 <body>
-<header class="wrapper">
-        <h1>자유게시판</h1>
-  </header>
-  <div class="wrapper" style="width: 500px; margin: 0 auto; margin-top: 100px;">
+  <div class="wrapper" style="width: 500px; margin: 0 auto; margin-top: 50px;">
     <div class="content">
-      <h2>글쓰기</h2>
+      <h1>글쓰기</h1>
       <form action="insertboard_ok.php" method="POST">
-        <div>
+        <div class="form-group">
+          <label>작성자</label>
+          <input class="form-control" type="text" placeholder=<?= $_SESSION['user']->name ?> readonly>
+        </div>
+        <div class="form-group">
           <label>제목</label>
-          <input type="text" name="title" placeholder="제목을 입력하세요"  style="width: 300px;">
+          <input type="text" name="title" class="form-control" placeholder="제목을 입력하세요">
         </div>
-        <div >
+        <div class="form-group">
           <label>내용</label>
-          <textarea name="content" rows="3" placeholder="내용을 입력하세요"  style="width: 300px;"></textarea>
+          <textarea name="content" class="form-control" rows="10" placeholder="내용을 입력하세요"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="margin-left: 60px;">글쓰기</button>
-        <a href="getboardlist.php"><button type="button" >뒤로가기</button></a>
+        <div class="form-group" style="float:right">
+          <button type="submit" class="btn btn-primary">글쓰기</button>
+          <a href="getboardlist.php"><button type="button" class="btn btn-danger">뒤로가기</button></a>
+        </div>
       </form>
     </div>
   </div>

@@ -7,10 +7,6 @@
     box-sizing: border-box;
 }
 
-.wrapper {
-    width: 500px;
-    margin: 0 auto;
-}
 h1 {
     font-size: 40px;  
     padding-top: 100px;  
@@ -18,21 +14,4 @@ h1 {
 h2 {
     
     font-size: 20px;
-}
-form {
-   
-    width: 500px;
-    height: 300px;
-    position: relative;
-}
-form > div {
-    padding : 3px;
-}
-input {
-    position: absolute;
-    right: 120px;
-}
-textarea {
-    position: absolute;
-    right: 120px;
 }
