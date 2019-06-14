@@ -15,6 +15,7 @@
     @endif
 
     <script src="/js/app.js"></script>
+    @yield('scriptsection')
     <title> My Blog</title>
 </head>
 
@@ -27,7 +28,6 @@
         <div class="container">
             <header class="d-flex">
                 <div class="title">
-                    <img src="imgs/header.jpg" alt="header" height="250">
                     <div class="txt">
                         <h1><a href="/">Welcome to my blog</a></h1>
                         <div class="btnSubmenu">menu</div>
